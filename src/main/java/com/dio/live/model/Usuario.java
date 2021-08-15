@@ -3,6 +3,7 @@ package com.dio.live.model;
 import lombok.*;
 import org.hibernate.envers.Audited;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -29,7 +30,10 @@ public class Usuario {
     private NivelAcesso nivelAcesso;
     @ManyToOne
     private  JornadaTrabalho jornadaTrabalho;
+    @Column(nullable = false)
     private BigDecimal tolerancia;
+    @Column(nullable = false)
     private LocalDateTime inicioJornada;
+    @Column(nullable = false)
     private LocalDateTime finalJornada;
 }
